@@ -1,0 +1,16 @@
+name: teleku-bot-final
+services:
+  - name: teleku-bot
+    type: web
+    docker:
+      dockerfile: Dockerfile
+    health_checks:
+      - protocol: http
+        path: /
+        port: 8000
+    scaling:
+      min: 1
+      max: 1
+    instance_type: free
+    regions:
+      - sin
